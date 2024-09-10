@@ -1,6 +1,7 @@
 name: Multiple jobs and Event
 # Allows you to run this workflow manually from the Actions tab
-on: [push,workflow_dispatch]
+#on: [push,workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   First:
     # runs-on: on which machine that job will run.  
@@ -37,4 +38,4 @@ jobs:
         # every steps name start with -
         - name: Deploye Code
         # Print Environment inbuilt Variable
-          run: echo " Deploye the Code ${{ github }}"
+          run: echo " Deploye the Code ${{ toJSON(github) }}"
