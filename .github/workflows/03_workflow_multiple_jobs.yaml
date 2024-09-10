@@ -37,4 +37,4 @@ jobs:
         # every steps name start with -
         - name: Deploye Code
         # Print Environment inbuilt Variable
-          run: echo " Deploye the Code: ${{ github }}"
+          run: echo " Deploye the Code ${{ github }}"
