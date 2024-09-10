@@ -1,0 +1,12 @@
+name: First Workflow
+# Allows you to run this workflow manually from the Actions tab
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      # every steps name start with -
+      - name: Print greeting
+        run: echo " Hi, This is first workflow steps"
+      - name: Print Goodbye
+        run: echo " Goodbye workflow"
