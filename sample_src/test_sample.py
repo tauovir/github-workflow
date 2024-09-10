@@ -4,7 +4,6 @@ import json
 from sample import CommonCase
 
 
-
 def test_factorial():
     """
     Test sample function
