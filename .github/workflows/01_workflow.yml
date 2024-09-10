@@ -10,3 +10,9 @@ jobs:
         run: echo " Hi, This is first workflow steps"
       - name: Print Goodbye
         run: echo " Goodbye workflow"
+        # Use pipe(|) to run mutiple shell command
+      - name: Multiple shell command
+        run: |
+             echo "First command"
+             echo " second command"
+              
