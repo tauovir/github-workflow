@@ -11,6 +11,8 @@ on:
   push:
   branches:
     - feature
+  paths-ignore:
+    - '.github/workflows/.*'  # ignore workflow if changes happen in this path
 jobs:
   Integration-Test-Job:
     # runs-on: on which machine that job will run.  
