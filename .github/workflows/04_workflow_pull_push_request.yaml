@@ -6,7 +6,7 @@ on:
       - opened
     branches:
       - main  #main
-      - dev-* #dev-new,dev-this
+      - 'dev-*' #dev-new,dev-this
   workflow_dispatch:
   push:
   branches:
