@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   push:
   branches:
-    - feature
+    - 'feature'
   paths-ignore:
     - '.github/workflows/.*'  # ignore workflow if changes happen in this path
 jobs:
