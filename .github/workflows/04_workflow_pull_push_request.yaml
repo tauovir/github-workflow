@@ -6,15 +6,15 @@ on:
       - opened
     branches:
       - main  #main
-      - dev-* #dev-new,dev-this
+      - 'dev-*' #dev-new,dev-this
   workflow_dispatch:
   push:
   branches:
-    - feature
+    - 'feature'
   paths-ignore:
     - '.github/workflows/.*'  # ignore workflow if changes happen in this path
 jobs:
-  Integration-Test-Job:
+  Deploye102:
     # runs-on: on which machine that job will run.  
     runs-on: ubuntu-latest
     steps:
