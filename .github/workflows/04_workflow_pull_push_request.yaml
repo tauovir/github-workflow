@@ -1,4 +1,4 @@
-name: Pull Request Event Workflow
+name: Pull Push Request Event Workflow
 on:
   # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#pull_request
   pull_request:
