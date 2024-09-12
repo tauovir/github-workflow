@@ -29,3 +29,18 @@ jobs:
              echo "WORKFLOW_NAME -> ${{env.WORKFLOW_NAME}}"
              echo "DIR -> ${{env.DIR}}"
              echo "PORT -> ${{env.port}}"  # this will not print as it is part of other job
+             echo "SERVER_URL -> ${{secrets.SERVER_URL}}"  # general repository level secret
+  env-jobs103:
+    needs: env-jobs102
+    environment:preprod  # environment level configurations
+    env:
+      DB_NAME: ${{secrets.DB_ENV_NAME}}
+      DB_VAR: ${{vars.DB_ENV_VAR}}
+      PORT: ${{vars.PORT}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Environment Configurations
+        run: |
+             echo "DB_NAME -> ${{env.DB_NAME}}"
+             echo "DB_VAR -> ${{env.DB_VAR}}"
+             echo "PORT -> ${{env.PORT}}" 
