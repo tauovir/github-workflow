@@ -32,7 +32,7 @@ jobs:
              echo "SERVER_URL -> ${{secrets.SERVER_URL}}"  # general repository level secret
   env-jobs103:
     needs: env-jobs102
-    environment:preprod  # environment level configurations
+    environment: preprod  # environment level configurations
     env:
       DB_NAME: ${{secrets.DB_ENV_NAME}}
       DB_VAR: ${{vars.DB_ENV_VAR}}
