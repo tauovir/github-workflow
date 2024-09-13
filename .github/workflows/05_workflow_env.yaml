@@ -1,0 +1,46 @@
+name: WORKFLOW ENV CONFIG
+# Allows you to run this workflow manually from the Actions tab
+on: workflow_dispatch
+env:
+  WORKFLOW_NAME : Workflow level environment
+jobs:
+  env-jobs101:
+    env:
+      cluster_name: Job1 Cluster
+      port: 8081
+    runs-on: ubuntu-latest
+    steps:
+      # every steps name start with -
+      - name: Print workflow Name
+        run: echo "WORKFLOW_NAME -> ${{env.WORKFLOW_NAME}}"
+        # Use pipe(|) to run mutiple shell command
+      - name: Print Cluster
+        run: |
+             echo "Cluster -> ${{env.cluster_name}}"
+             echo "PORT -> ${{env.port}}"
+  env-jobs102:
+    needs: env-jobs101
+    env:
+      DIR: workspace/main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job2 Configurations
+        run: |
+             echo "WORKFLOW_NAME -> ${{env.WORKFLOW_NAME}}"
+             echo "DIR -> ${{env.DIR}}"
+             echo "PORT -> ${{env.port}}"  # this will not print as it is part of other job
+             echo "SERVER_URL -> ${{secrets.SERVER_URL}}"  # general repository level secret
+  env-jobs103:
+    needs: env-jobs102
+    environment: preprod  # environment level configurations
+    env:
+      DB_NAME: ${{secrets.DB_ENV_NAME}}
+      DB_VAR: ${{vars.DB_ENV_VAR}}
+      PORT: ${{vars.PORT}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Environment Configurations
+        run: |
+             echo "DB_NAME -> ${{env.DB_NAME}}"
+             echo "DB_VAR -> ${{env.DB_VAR}}"
+             echo "PORT -> ${{env.PORT}}" 

@@ -1,5 +1,10 @@
 from setuptools import setup, find_packages
+<<<<<<< HEAD
 ###
+=======
+
+## Set up function skipp CI0000
+>>>>>>> 5ebbc86bbf61dcf7d55c224bd73b3321e7bc705a
 with open("README.md", "r") as fh:
     long_description = fh.read()
 

@@ -6,7 +6,7 @@ on:
       - opened
   workflow_dispatch:
 jobs:
-  Integration Test Job:
+  Integration-Test-Job:
     # runs-on: on which machine that job will run.  
     runs-on: ubuntu-latest
     steps:
